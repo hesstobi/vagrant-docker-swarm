@@ -15,6 +15,9 @@ numcpu = 1
 The docker swarm is built automatically by sharing the worker token via a shared file on
 the host machine.
 
+A private network starting at 10.2.2.2 (manager node) is created and incremented by one
+for each worker. 
+
 # Usage
 
 SSH into the different machines with their names:
