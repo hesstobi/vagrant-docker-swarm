@@ -20,6 +20,13 @@ for each worker.
 
 # Usage
 
+Start the virtual machines
+
+```bash
+vagrant up
+``` 
+
+
 SSH into the different machines with their names:
 ```bash
 vagrant ssh manager
@@ -42,6 +49,13 @@ If you want to remove the webserver just execute:
 ```bash
 docker service rm webserver
 ``` 
+
+To destroy everything again
+
+```bash
+vagrant destroy -f
+``` 
+
 
 # Inspiration
 
