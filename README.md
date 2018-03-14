@@ -11,6 +11,8 @@ vagrant ssh manager
 vagrant ssh worker1
 vagrant ssh worker2
 
+#Inspiration
+
 Inspired by: https://github.com/tdi/vagrant-docker-swarm
 
 
