@@ -4,7 +4,7 @@ Small example of building a docker swarm for testing using vagrant.
 # Configuration
 
 Set numworkers for more virtual machines, change vmmemory and numcpu for more resources for
-each virtual machine.
+each virtual machine in the Vagrantfile.
 
 ```ruby
 numworkers = 2
