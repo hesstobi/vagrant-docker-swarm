@@ -28,6 +28,7 @@ File.open("./hosts", 'w') { |file|
   instances.each do |i|
     file.write("#{i[:ip]} #{i[:name]} #{i[:name]}\n")
   end
+  file.write("#{manager_ip} manager manager\n")
 }
 
 # Vagrant version requirement
