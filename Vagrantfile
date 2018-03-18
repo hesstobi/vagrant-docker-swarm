@@ -54,6 +54,9 @@ Vagrant.configure("2") do |config|
         i.vm.provision "shell", inline: "docker swarm init --advertise-addr #{manager_ip}"
         i.vm.provision "shell", inline: "docker swarm join-token -q worker > /vagrant/token"
       end
+	  i.vm.provision "shell", inline: "mkdir -p /mnt/registry", privileged: true
+	  i.vm.provision "shell", inline: "docker node update --label-add registry=true manager"
+	  i.vm.provision "shell", inline: "docker service create --name registry --constraint 'node.labels.registry==true' --mount type=bind,src=/mnt/registry,dst=/var/lib/registry -e REGISTRY_HTTP_ADDR=0.0.0.0:5000 --publish published=5000,target=5000 --replicas 1 registry:2"
     end 
 
   instances.each do |instance| 
